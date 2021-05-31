@@ -3,15 +3,16 @@ const app = express()
 const cors = require('cors')
 const _ = require('lodash')
 const Web3 = require('Web3')
+
+
 const web3 = new Web3 ('https://rpc-mumbai.matic.today')
 
-// set contract
 const abi = require ('./abi.json').abi
 const contract = new web3.eth.Contract(abi)
 
 // set user
-const pvtKey = process.env.PRIVATE_KEY
-web3.eth.accounts.wallet.add(pvtKey)
+const privateKey = process.env.PRIVATE_KEY
+web3.eth.accounts.wallet.add(privateKey)
 const user = web3.eth.accounts.wallet[0].address
 
 const getSignatureParameters = (signature) => {
@@ -20,9 +21,9 @@ const getSignatureParameters = (signature) => {
       'Given value "'.concat(signature, '" is not a valid hex string.')
     );
   }
-  var r = signature.slice(0, 66);
-  var s = "0x".concat(signature.slice(66, 130));
-  var v = "0x".concat(signature.slice(130, 132));
+  let r = signature.slice(0, 66);
+  let s = "0x".concat(signature.slice(66, 130));
+  let v = "0x".concat(signature.slice(130, 132));
   v = web3.utils.hexToNumber(v);
   if (![27, 28].includes(v)) v += 27;
   return {
@@ -35,7 +36,7 @@ const getSignatureParameters = (signature) => {
 app.use(express.json({ extended: true }))
 app.use(cors())
 app.get('/', function (req, res) {
-  res.send('Hello World')
+  res.send('Res send')
 })
 
 app.post (

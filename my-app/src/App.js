@@ -6,7 +6,6 @@ import { Box, Button, Flex } from 'rimble-ui'
 const { getTypedData } = require("./meta-tx")
 const request = require('request')
 
-
 const tokenAddresses = {
   "80001": "0x2395d740789d8C27C139C62d1aF786c77c9a1Ef1"
 }
@@ -22,11 +21,6 @@ async function fillMaticDetails () {
       name: 'address'
     }]
   }, [accounts[0]]);
-
-  let balanceMumbai = await mumbai.eth.call ({
-    to: tokenAddresses["80001"],
-    data: _data
-  });
 }
 
 async function setAccountData(setUserAddress, setChainId, setEthData, setNetworkName, setMumbaiBalance) {

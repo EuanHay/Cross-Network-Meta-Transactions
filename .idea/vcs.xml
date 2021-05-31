@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ETHOnline-Workshop" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cross-network-demo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/network-agnostic-demo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/react-dapp-boilerplate" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/scaffold-eth" vcs="Git" />
+  </component>
+</project>
